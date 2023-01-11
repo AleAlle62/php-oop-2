@@ -3,7 +3,7 @@ include __DIR__ . '/user.php';
 include __DIR__ . '/extents/Sub.php';
 include __DIR__ . '/extents/NotSub.php';
 include __DIR__ . '/products.php';
-include __DIR__ . '/card.php';
+include __DIR__ . '/traits/Loggable.php';
 
 // stampra per vedere che sia giusto lo sconto
 $alessio= new NotSub('alessio', 'allegrini', '20/21');
@@ -18,5 +18,17 @@ var_dump($cuccia);
 $esito = $alessio->isExpired();
 var_dump($esito);
 
+
+
+// eccezione
+class FileNotFoundException extends Exception { }
+
+try {
+    if (!file_exists('file.txt')) {
+        throw new FileNotFoundException('Il file richiesto non esiste.');
+    }
+} catch (FileNotFoundException $e) {
+    echo $e->getMessage();
+}
 ?>
 

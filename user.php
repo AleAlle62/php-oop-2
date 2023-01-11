@@ -1,6 +1,10 @@
 <?php
+
 class User
 {
+    // trait 
+    use Loggable;
+
     protected $name;
     protected $surname;
     protected $expirationDate;
@@ -14,7 +18,7 @@ class User
     }
 
     public function isExpired() {
-        $now = new DateTime();
+        $now = new DateTime('now');
     
         $expiration = DateTime::createFromFormat('m/y', $this->expirationDate);
         $interval = $now->diff($expiration);
