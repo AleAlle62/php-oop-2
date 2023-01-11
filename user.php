@@ -1,5 +1,5 @@
 <?php
-
+include __DIR__ . '/traits/Loggable.php';
 class User
 {
     // trait 

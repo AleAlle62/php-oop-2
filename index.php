@@ -3,7 +3,7 @@ include __DIR__ . '/user.php';
 include __DIR__ . '/extents/Sub.php';
 include __DIR__ . '/extents/NotSub.php';
 include __DIR__ . '/products.php';
-include __DIR__ . '/traits/Loggable.php';
+include_once __DIR__ . '/traits/Loggable.php';
 
 // stampra per vedere che sia giusto lo sconto
 $alessio= new NotSub('alessio', 'allegrini', '20/21');
